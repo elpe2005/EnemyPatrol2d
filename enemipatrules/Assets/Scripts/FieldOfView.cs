@@ -46,7 +46,8 @@ public class FieldOfView : MonoBehaviour
                     canSeePlayer = false;
             }
             else if (canSeePlayer)
-                    canSeePlayer = false;
+                    canSeePlayer = false; /* om canseePlayer är true så ska den stoppa patrulscriptet och börja AIChase scriptet, 
+                    Kanske även fixar så om canseePlayer blir false så ska fienden gå tillbaka till patrulscriptet */
         }
     private void OnDrawGizmos()
     {
