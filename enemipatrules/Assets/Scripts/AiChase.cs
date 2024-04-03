@@ -14,8 +14,6 @@ public class AiChase : MonoBehaviour
 
     void Update()
     {
-        if (canseePlayer = true)
-        {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
@@ -23,6 +21,6 @@ public class AiChase : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-        }
     }
-}*/
+}
+*/
