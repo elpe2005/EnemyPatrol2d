@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class FieldOfView : MonoBehaviour
 {
     public float radius = 5f;
@@ -9,7 +8,7 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetLayer;
     public LayerMask obstructionLayer;
     public GameObject playerRef;
-    public bool canSeePlayer { get; private set; }
+    public bool CanSeePlayer { get; private set; }
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -22,7 +21,8 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
-            FOV();
+            if(AiState. == AiState.Patrol)
+                FOV();
         }
     }
         private void FOV()
@@ -38,16 +38,16 @@ public class FieldOfView : MonoBehaviour
                     float distanceToTarget = Vector2.Distance(transform.position, target.position);
 
                     if(!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayer))
-                        canSeePlayer = true;
+                        CanSeePlayer = true;
                     else 
-                        canSeePlayer = false;
+                        CanSeePlayer = false;
                 }
                 else
-                    canSeePlayer = false;
+                    CanSeePlayer = false;
             }
-            else if (canSeePlayer)
-                    canSeePlayer = false; /* om canseePlayer är true så ska den stoppa patrulscriptet och börja AIChase scriptet, 
-                    Kanske även fixar så om canseePlayer blir false så ska fienden gå tillbaka till patrulscriptet */
+            else if (CanSeePlayer)
+                    CanSeePlayer = false; /* om CanSeePlayer är true så ska den stoppa patrulscriptet och börja AIChase scriptet, 
+                    Kanske även fixar så om CanSeePlayer blir false så ska fienden gå tillbaka till patrulscriptet */
         }
     private void OnDrawGizmos()
     {
@@ -61,7 +61,7 @@ public class FieldOfView : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
         Gizmos.DrawLine(transform.position, transform.position + angle02 * radius);
 
-        if (canSeePlayer){
+        if (CanSeePlayer){
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, playerRef.transform.position);
         }
