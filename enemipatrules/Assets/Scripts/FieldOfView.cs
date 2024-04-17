@@ -6,22 +6,21 @@ public class FieldOfView : MonoBehaviour
     public float radius = 5f;
     [Range (0,360)]public float angle;
     public LayerMask targetLayer;   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    public LayerMask obstructionLayer;   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    public GameObject playerRef;   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    public bool CanSeePlayer { get; private set; }   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    void Start()   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    {   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-        playerRef = GameObject.FindGameObjectWithTag("Player");   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-        StartCoroutine(FOVCheck());   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    }   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    private IEnumerator FOVCheck()   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-    {   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-        WaitForSeconds wait = new WaitForSeconds(0.1f);   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
-        while (true)   // Med Enums ska jag då göra så att jag kan ändra state så när FOV ser player så stängs patrol av och Chase börjar, om player går utanför FOV så kommer den gå tillbaka till patrol. 
+    public LayerMask obstructionLayer;   
+    public GameObject playerRef;   
+    public bool CanSeePlayer { get; private set; }   
+    void Start()   
+    {   
+        playerRef = GameObject.FindGameObjectWithTag("Player");   
+        StartCoroutine(FOVCheck());   
+    }   
+    private IEnumerator FOVCheck()   
+    {   
+        WaitForSeconds wait = new WaitForSeconds(0.1f);   
+   
+        while (true)   
         {
             yield return wait;
-            //if(AiState.Patrol == AiState.Patrol)
             {
                 FOV();
             }

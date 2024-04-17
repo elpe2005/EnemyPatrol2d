@@ -5,19 +5,23 @@ using UnityEngine;
 
 public class State : MonoBehaviour
 {
-    public enum AiState
+    EnemyPatrol patrolScript;
+    AiChase chaseScript;
+    FieldOfView fovScript;
+    void Start()
     {
-        Chase,
-        Patrol
+        fovScript = GetComponent<FieldOfView>();
+        patrolScript = GetComponent<EnemyPatrol>();
+        chaseScript = GetComponent<AiChase>();
+        chaseScript. enabled = false;
+        Debug.Log("AiChase off");
     }
-   // public void Start()
-   // {
-   //     AiState.Patrol
-   // }
-    public AiState EState;
     void Update()
     {
- 
+       if(fovScript.CanSeePlayer){        
+        chaseScript.enabled = true;
+        patrolScript.enabled = false;
+       }
     }
     public void ChangeState()
     {
