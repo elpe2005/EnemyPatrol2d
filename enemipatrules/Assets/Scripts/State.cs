@@ -14,7 +14,6 @@ public class State : MonoBehaviour
         patrolScript = GetComponent<EnemyPatrol>();
         chaseScript = GetComponent<AiChase>();
         chaseScript. enabled = false;
-        Debug.Log("AiChase off");
     }
     void Update()
     {
@@ -22,9 +21,5 @@ public class State : MonoBehaviour
         chaseScript.enabled = true;
         patrolScript.enabled = false;
        }
-    }
-    public void ChangeState()
-    {
-
     }
 }
