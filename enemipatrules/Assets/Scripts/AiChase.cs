@@ -14,8 +14,6 @@ public class AiChase : MonoBehaviour
 
     void Update()
     {
-       //if(AiState.Chase != AiState.Chase) return;
-
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();

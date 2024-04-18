@@ -13,7 +13,7 @@ public class State : MonoBehaviour
         fovScript = GetComponent<FieldOfView>();
         patrolScript = GetComponent<EnemyPatrol>();
         chaseScript = GetComponent<AiChase>();
-        chaseScript. enabled = false;
+        chaseScript.enabled = false;
     }
     void Update()
     {
