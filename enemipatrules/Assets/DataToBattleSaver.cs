@@ -9,6 +9,7 @@ public class DataToBattleSaver : MonoBehaviour
     public FightAreaEnemyData fightAreaEnemyData;
     public PlayerCharacterData playerCharacterData;
     public UnityEngine.Vector2 position;
+    public string OGscenceName;
     private void Awake() {
         DontDestroyOnLoad(transform.gameObject);
     }
@@ -24,6 +25,7 @@ public class DataToBattleSaver : MonoBehaviour
         fightAreaEnemyData = FAED;
         playerCharacterData = PCD;
         this.position = position;
+        OGscenceName = SceneManager.GetActiveScene().name;
         Debug.Log(fightAreaEnemyData.StormTrooperAmount);
         SceneManager.LoadScene("BattleScene");
     }

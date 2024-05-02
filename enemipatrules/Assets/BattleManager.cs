@@ -19,7 +19,7 @@ public class BattleManager : MonoBehaviour
     private List<Fighter> playerList;
 
     private int CharacterSwitchNumber = 1;
-    public UnityEngine.Vector2 position;
+    public UnityEngine.Vector3 position;
 
     public FightAreaEnemyData fightAreaEnemyData;
     public DataToBattleSaver dataToBattleSaver;
@@ -139,7 +139,7 @@ public class BattleManager : MonoBehaviour
         BattleToOverworldSaver bos = GameObject.Find("ToOverworldSaver").GetComponent<BattleToOverworldSaver>();
 
         List<int> list = playerCharacterData.KilledEnemies;
-        bos.StartOverworldScene(playerList, list, fightAreaEnemyData, position);
+        bos.StartOverworldScene(playerList, list, fightAreaEnemyData, position, dataToBattleSaver.OGscenceName);
     }
 
 

@@ -27,7 +27,7 @@ public class FightStarter : MonoBehaviour
         PlayerCharacterData PCD = gameObject.GetComponent<PlayerCharacterData>();
 
         Debug.Log(PCD.playerList[0]);
-        Vector2 position = gameObject.transform.position;
+        Vector3 position = gameObject.transform.position;
 
         //Skicka in spelaren i fighten
         DataToBattleSaver DBS = GameObject.Find("SceneSaver").GetComponent<DataToBattleSaver>();
