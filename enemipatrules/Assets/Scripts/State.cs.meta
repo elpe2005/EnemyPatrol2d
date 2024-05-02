@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:enemipatrules/Assets/Scripts/Back.cs.meta
+guid: 59dbe6809815e204786c41e9e8150783
+========
+guid: 3cf41a423209b9c46bf507827acbfe49
+>>>>>>>> main:enemipatrules/Assets/Scripts/State.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
