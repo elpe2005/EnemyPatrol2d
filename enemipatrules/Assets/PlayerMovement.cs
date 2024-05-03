@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,4 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movement);
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag.CompareTo("Walls") == 0)
+        {
+            Debug.Log($"Walls");
+        }
+    }
+    
 }

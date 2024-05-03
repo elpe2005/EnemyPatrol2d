@@ -614,8 +614,10 @@ MonoBehaviour:
   button2: {fileID: 331323937}
   button3: {fileID: 210028574}
   button4: {fileID: 53537648}
-  position: {x: 0, y: 0}
+  position: {x: 0, y: 0, z: 0}
   fightAreaEnemyData: {fileID: 0}
+  dataToBattleSaver: {fileID: 0}
+  playerCharacterData: {fileID: 0}
   playerSprite: {fileID: 0}
   enemySprite: {fileID: 0}
 --- !u!1 &763781758
@@ -647,7 +649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497f0aacbcf366d4dac606d3854105d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: 0, y: 0, z: 0}
+  list: 
   FAEDid: 0
 --- !u!4 &763781760
 Transform:
@@ -742,8 +745,8 @@ Transform:
   m_GameObject: {fileID: 884296467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.63, y: 1.62, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalPosition: {x: 5.33, y: 1.31, z: 0}
+  m_LocalScale: {x: 1.9870112, y: 1.7718316, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

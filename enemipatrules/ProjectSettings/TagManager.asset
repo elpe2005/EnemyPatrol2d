@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameMusic
+  - player
+  - FightArea
+  - Walls
+  - Map2
   layers:
   - Default
   - TransparentFX
